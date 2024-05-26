@@ -6,14 +6,29 @@ class TreeTerm(BaseModel):
     address: str
     hebrewDescription: str
     englishDescription: str    
-    term: int
-    wordInTerm: int    
+    termId: int
+    wordInTermId: int    
     category: str
     numOfDescendants: int    
     
 class Term(BaseModel):  
-    term: int
-    hebrewDescription: str
-    englishDescription: str       
+    termId: int
+    termHebrewDescription: str
+    termEnglishDescription: str       
     termYears: List[str]
-    keysWords: List[str] 
+    termkeysWords: List[str] 
+    termWords: List[str]
+    numOfWordsInTerm:int
+    numOfWordsInDictionary:int
+    wordHebrewDecsription: str
+    wordEnglishDecsription: str
+    additionalsTermAppearance : List[str]
+    numOfAdditionalsTermAppearance: int
+    
+    
+class Word(BaseModel):
+    wordIdInTerm: int
+    wordId: int
+    wordHebrewDescription: str
+    wordEnglishDescription: str
+    unpreferedWords: List[str]

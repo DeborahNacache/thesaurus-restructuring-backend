@@ -26,3 +26,13 @@ async def read_item(item_id: int):
     if item is None:
         raise HTTPException(status_code=404, detail="Item not found")
     return item
+
+# @app.put("/items/{item_id}")
+# async def update_item(item_id: int, new_item: str):
+#     item = await app.state.db.fetchrow('SELECT * FROM catalog.items WHERE id=$1', item_id)
+#     if item is None:
+#         raise HTTPException(status_code=404, detail="Item not found")
+        
+#     await app.state.db.execute('UPDATE catalog.items SET item_name=$1 WHERE id=$2', new_item, item_id)
+        
+#     return {"message": "Item updated successfully"}
